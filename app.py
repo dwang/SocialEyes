@@ -13,7 +13,7 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-from flask import Flask
+from flask import Flask, render_template, request
 app = Flask(__name__)
 
 def get_tweet_sentiment(tweet):
@@ -53,21 +53,21 @@ def analyze(query):
     output = ""
     
     ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive']
-    output += "Positive tweets percentage: {}%".format(100 * len(ptweets)/len(tweets))
+    output += "Positive tweets: {}%".format(100 * len(ptweets)/len(tweets))
     output += "<br>"
     ntweets = [tweet for tweet in tweets if tweet['sentiment'] == 'negative']
-    output += "Negative tweets percentage: {}%".format(100 * len(ntweets)/len(tweets))
+    output += "Negative tweets: {}%".format(100 * len(ntweets)/len(tweets))
     output += "<br>"
     netweets=[tweet for tweet in tweets if tweet['sentiment'] == 'neutral']
-    output += "Neutral tweets percentage: {}%".format(100 * len(netweets)/len(tweets) + 1)
+    output += "Neutral tweets: {}%".format(100 * len(netweets)/len(tweets) + 1)
     output += "<br>"
+    
+    #output += "<br><br>Positive tweets:"
+    #output += "<br>"
 
-    output += "<br><br>Positive tweets:"
-    output += "<br>"
-
-    for tweet in ptweets[:10]:
-        output += tweet['text']
-        output += "<br>"
+    #for tweet in ptweets[:10]:
+    #    output += tweet['text']
+    #    output += "<br>"
  
     output += "<br><br>Negative tweets:"
     output += "<br>"
@@ -80,4 +80,12 @@ def analyze(query):
 
 @app.route("/")
 def index():
-    return analyze("leafyishere")
+    return render_template("home.html")
+
+@app.route('/results', methods=['GET', 'POST'])
+def confirmation():
+    text = request.form.get('data')
+    results = analyze(text)
+    return results
+
+

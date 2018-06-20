@@ -1,0 +1,16 @@
+.parallax-container {
+    min-height: 380px;
+}
+
+.input-field input[type=text]:focus+label {
+    color: #4169c1;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #4169c1 !important;
+    box-shadow: 0 1px 0 0 #4169c1 !important;
+}
+
+.input-field .prefix.active {
+    color: #4169c1;
+}

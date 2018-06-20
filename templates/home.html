@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>SocialEyes</title>
+    <meta name="description" content="SocialEyes is a service that recognizes potentially offensive and undesirable content on a user's Twitter account.">
+    <link rel="icon" type="image/png" href="static/img/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot" id="index-banner">
+            <div class="container">
+                <h1 class="header center white-text">SocialEyes</h1>
+                <div class="row center">
+                    <h5 class="header col s12 white-text">An online service which scans your tweets and assesses their potential offensiveness</h5>
+                </div>
+                <div class="center">
+
+                </div>
+                <div class="row center">
+                    <div class="text-white" style="display: inline-block; color: #fff">
+                        <div style="background-color: #4169c1; font-size: 15px; padding: 0 28px; line-height: 54px; letter-spacing: .5px; display: inline-block;">ENTER YOUR TWITTER HANDLE</div>
+                        <form action="/results" method="POST">
+                            <div class="input-field">
+                                <i class="material-icons prefix">alternate_email</i>
+                                <input name="data" type="text" required style="color: #fff" placeholder="Example: realDonaldTrump">
+                            </div>
+                            <button class="btn-large waves-effect waves-light" type="submit" name="action" style="background-color: #4169c1">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="../static/img/background.jpg">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="material-icons">flash_on</i>
+                        </h2>
+                        <h5 class="center">Speeds up development</h5>
+
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum turpis libero, vitae
+                            rutrum elit tincidunt sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="material-icons">group</i>
+                        </h2>
+                        <h5 class="center">User Experience Focused</h5>
+
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum turpis libero, vitae
+                            rutrum elit tincidunt sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. </p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center light-blue-text">
+                            <i class="material-icons">settings</i>
+                        </h2>
+                        <h5 class="center">Easy to work with</h5>
+
+                        <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vestibulum turpis libero, vitae
+                            rutrum elit tincidunt sed. Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
